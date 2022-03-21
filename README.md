@@ -13,4 +13,4 @@
 4. 然后你需要自行进行后续操作
 
 早上抢票: 
-1. 
+1. 直接在console里面set timeout打开 hk.sz.gov.cn/passInfo/detail这个网站10次就可以
