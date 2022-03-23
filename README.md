@@ -27,7 +27,20 @@ User guide:
 4. 然后你需要自行进行后续操作
 
 早上抢票: 
-1. 直接在console里面set timeout打开 hk.sz.gov.cn/passInfo/detail这个网站10次就可以
+1. 在Tampermonkey中关闭HealthStationJianLou
+2. 在Tampermonkey中导入并打开HealthStationMorning
+3. 直接在console里面输入
+
+    setInterval(function(){
+        var date=new Date();
+        var h=date.getHours();
+        var m=date.getMinutes();
+        var s=date.getSeconds();
+        if((h==09&&m==59&&s>=58)||(h==10&&m==00&&s<=02)){
+             window.open("https://hk.sz.gov.cn/passInfo/confirmOrder?checkinDate=2022-02-22&t=1&s=1");                                            window.open("https://hk.sz.gov.cn/passInfo/detail");                 
+        }
+    },1000);
+4. 等待网页打开后继续进行操作
 实测过程中并没有成功，通过setTimeout功能访问passInfo/detail页面显示无法连接到网站，建议有相同想法想要尝试的同仁可以进行更多尝试
 
 ***法律风险规避***
